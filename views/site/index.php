@@ -21,7 +21,7 @@ $this->title = 'My Yii Application';
 
  <div class="container">
             <div class="row">
-                <h2 class="text-center">Services</h2>
+                <h2 class="text-center">Bukapeta</h2>
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <div class="box">
