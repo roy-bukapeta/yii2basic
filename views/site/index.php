@@ -7,7 +7,7 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Hendrikus RIchardo</h1>
+        <h1>Selamat Datang Didalam Aplikasi Inventaris</h1>
 
         <p class="lead">Terimkasih Sudah Atas kesempatan yang telah diberikan kepada saya</p>
 
@@ -16,44 +16,42 @@ $this->title = 'My Yii Application';
 
     <div class="body-content">
 
-        <!-- <div class="container">
+
+        <!--<img src="<?php echo Yii::getAlias('@web'); ?>/images/8073-k.jpg">-->
+
+ <div class="container">
             <div class="row">
                 <h2 class="text-center">Services</h2>
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <div class="box">
                                 <div class="box-content">
-                                    <h1 class="tag-title">Foto Udara</h1>
+                                    <h1 class="tag-title">User</h1>
                                     <hr />
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra quam sollicitudin nibh aliquam finibus. Etiam efficitur felis vel imperdiet varius. Maecenas bibendum elementum molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus finibus semper. Fusce molestie tincidunt leo vel varius. Nam scelerisque nulla feugiat leo consequat, id dignissim sem tincidunt. Proin elit mauris, hendrerit in varius sed, facilisis sit amet neque.</p>
-                                    <br />
-                                    <a href="ppc.html" class="btn btn-block btn-primary">Learn more</a>
+                                    <p><a href="<?php echo Yii::getAlias('@web'); ?>/index.php/users"><i class="fa fa-users fa-4x"></i></a></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 text-center">
                             <div class="box">
                                 <div class="box-content">
-                                    <h1 class="tag-title">Web Developer</h1>
+                                    <h1 class="tag-title">Inventaris</h1>
                                     <hr />
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra quam sollicitudin nibh aliquam finibus. Etiam efficitur felis vel imperdiet varius. Maecenas bibendum elementum molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus finibus semper. Fusce molestie tincidunt leo vel varius. Nam scelerisque nulla feugiat leo consequat, id dignissim sem tincidunt. Proin elit mauris, hendrerit in varius sed, facilisis sit amet neque.</p>
-                                    <br />
-                                    <a href="ppc.html" class="btn btn-block btn-primary">Learn more</a>
+                                   <p><a href="<?php echo Yii::getAlias('@web'); ?>/index.php/inventaris"><i class="fa fa-university fa-4x"></i></a></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 text-center">
                             <div class="box">
                                 <div class="box-content">
-                                    <h1 class="tag-title">Mobile Developer</h1>
+                                    <h1 class="tag-title">Kebutuhan</h1>
                                     <hr />
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra quam sollicitudin nibh aliquam finibus. Etiam efficitur felis vel imperdiet varius. Maecenas bibendum elementum molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus finibus semper. Fusce molestie tincidunt leo vel varius. Nam scelerisque nulla feugiat leo consequat, id dignissim sem tincidunt. Proin elit mauris, hendrerit in varius sed, facilisis sit amet neque.</p>
-                                    <br />
-                                    <a href="ppc.html" class="btn btn-block btn-primary">Learn more</a>
+                                    <p><a href="<?php echo Yii::getAlias('@web'); ?>/index.php/inventaris"><i class="fa fa-shopping-cart fa-4x"></i></a></p>
+
                                 </div>
                             </div>
                         </div>
-                    </div>    -->        
+                    </div>           
                 </div>
             </div>
         </div>

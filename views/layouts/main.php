@@ -17,6 +17,8 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -63,12 +65,20 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
+        <p class="pull-right">
+                <a href="<?php echo Yii::getAlias('@web'); ?>/index.php/users" style="margin-right:35px; font-weight:bold;">Users</a>
+                <a href="<?php echo Yii::getAlias('@web'); ?>/index.php/inventaris" style="margin-right:35px; font-weight:bold;">Inventaris</a>
+                <a href="<?php echo Yii::getAlias('@web'); ?>/index.php/kebutuhan" style="margin-right:35px; font-weight:bold;">Kebutuhan</a>
+        </p>
+    </div>
+</footer>
+<footer class="footer" style="background:#000   ;">
+    <div class="container">
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
-
 <?php $this->endBody() ?>
 </body>
 </html>
