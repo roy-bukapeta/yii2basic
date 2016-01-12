@@ -21,6 +21,9 @@ class Inventaris extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public $file;
+
     public static function tableName()
     {
         return 'inventaris';
@@ -34,7 +37,9 @@ class Inventaris extends \yii\db\ActiveRecord
         return [
             [['id'], 'required'],
             [['id'], 'integer'],
-            [['nama_barang', 'kode_barang', 'jenis_barang', 'tahun_pembelian'], 'required']
+            [['file'], 'file'],
+            [['nama_barang', 'kode_barang','jenis_barang', 'tahun_pembelian'], 'required'],
+            [['logo'], 'string','max' => 100]
         ];
     }
 
@@ -47,6 +52,7 @@ class Inventaris extends \yii\db\ActiveRecord
             'id'                => 'Nama',
             'nama_barang'       => 'Nama Barang',
             'kode_barang'       => 'Kode Barang',
+            'file'              => 'Gambar',
             'jenis_barang'      => 'Jenis Barang',
             'tahun_pembelian'   => 'Tahun Pembelian',
         ];

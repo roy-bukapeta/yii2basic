@@ -18,6 +18,19 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+    <!-- leaflet js -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+     
+
+     <style type="text/css">
+            #map{ 
+                height: 480px; 
+            }
+     </style>
+
+    
 
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
@@ -43,6 +56,8 @@ AppAsset::register($this);
 /*            ['label' => 'Profil', 'url' => ['/user/settings/profile']],  */
             ['label' => 'Inventaris', 'url' => ['/inventaris']],
             ['label' => 'Kebutuhan Barang', 'url' => ['/kebutuhan']],
+            ['label' => 'Map', 'url' => ['/map']],
+            ['label' => 'Widget', 'url' => ['/widget']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/user/security/login']] :
                 [

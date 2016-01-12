@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\web\UploadedFile;
+use yii\web\CUploadedFile;
 
 /**
  * InventarisController implements the CRUD actions for Inventaris model.
@@ -73,7 +75,24 @@ class InventarisController extends Controller
     {
         $model = new Inventaris();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $imageName = $model->nama_barang;
+
+            $model->file = UploadedFile::getInstance($model,'file');
+
+            $model->file->saveAs( 'uploads/'.$imageName.'.'.$model->file->extension);
+            
+            $model->logo = $imageName.'.'.$model->file->extension;
+
+            $tmpfile = UploadedFile::getInstance($model,'attachment');
+
+            $tmpfile_contents = file_get_contents( $tmpfile->tempName );
+
+            $model->attachment = base64_encode($tmpfile_contents);
+
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->id_inventaris]);
         } else {
             return $this->render('create', [
@@ -92,8 +111,11 @@ class InventarisController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post() &&  $model->save())) {
+
             return $this->redirect(['view', 'id' => $model->id_inventaris]);
+
+
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -109,6 +131,11 @@ class InventarisController extends Controller
      */
     public function actionDelete($id)
     {
+        $hapus             = $this->findModel($id); 
+        $namafile          = $hapus['logo']; 
+    
+        unlink(Yii::getAlias('@web').'/uploads/'. $namafile);
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

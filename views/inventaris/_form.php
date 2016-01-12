@@ -16,7 +16,7 @@ $item = ArrayHelper::map(Users::find()->all(), 'id','nama');
     <div class="col-lg-4">
         <div class="inventaris-form">
 
-            <?php $form = ActiveForm::begin(); ?>
+            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?> 
 
             
             <?= $form->field($model, 'id')->dropDownList($item,['prompt'=>'Select Your Name']); ?>
@@ -26,6 +26,10 @@ $item = ArrayHelper::map(Users::find()->all(), 'id','nama');
             <?= $form->field($model, 'kode_barang')->textInput() ?>
 
             <?= $form->field($model, 'jenis_barang')->textInput() ?>
+
+            <?= $form->field($model, 'file')->fileInput(); ?>
+
+            <?php echo $form->field($model, 'attachment')->fileInput();?>
 
             <?= $form->field($model, 'tahun_pembelian')->widget(DatePicker::classname(), [
             'options' => ['placeholder' => 'Enter birth date ...'],

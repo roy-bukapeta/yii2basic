@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helper\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\InventarisSearch */
@@ -37,7 +38,16 @@ $this->title = 'Inventaris';
             'nama_barang',
             'kode_barang',
             'jenis_barang',
-            // 'tahun_pembelian',
+            'tahun_pembelian',
+             [
+                'attribute'   => 'image',
+                'format'      => 'html',    
+                'value'       => function ($data) {
+                        return Html::img(Yii::getAlias('@web').'/uploads/'. $data['logo'],
+                            ['width'  => '80px'],
+                            ['height' => '80px']);
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
