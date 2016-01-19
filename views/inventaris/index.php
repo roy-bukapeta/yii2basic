@@ -53,4 +53,5 @@ $this->title = 'Inventaris';
         ],
     ]); ?>
 
+
 </div>

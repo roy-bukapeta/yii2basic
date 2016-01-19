@@ -33,7 +33,7 @@ class Users extends \yii\db\ActiveRecord
         return [
             [['nama', 'email', 'alamat'], 'string'],
             [['no_tlp'], 'integer'],
-            [['nama','email','email','no_tlp','alamat'], 'required']
+            [['nama','email','email','no_tlp','alamat','geojson','type_geometry'], 'required']
         ];
     }
 
@@ -43,11 +43,13 @@ class Users extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'Nama',
-            'nama' => 'Nama',
-            'email' => 'Email',
-            'no_tlp' => 'No Tlp',
-            'alamat' => 'Alamat',
+            'id'            => 'Nama',
+            'nama'          => 'Nama',
+            'email'         => 'Email',
+            'no_tlp'        => 'No Tlp',
+            'alamat'        => 'Alamat',
+            'geojson'       => 'Geo Json',
+            'type_geometry' => 'Type'
         ];
     }
 

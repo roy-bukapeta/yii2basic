@@ -265,4 +265,13 @@ return array (
     ),
     'bootstrap' => 'dektrium\\user\\Bootstrap',
   ),
+  '2amigos/yii2-leaflet-extension' => 
+  array (
+    'name' => '2amigos/yii2-leaflet-extension',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@dosamigos/leaflet' => $vendorDir . '/2amigos/yii2-leaflet-extension/src',
+    ),
+  ),
 );

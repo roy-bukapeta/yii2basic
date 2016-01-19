@@ -134,7 +134,7 @@ class InventarisController extends Controller
         $hapus             = $this->findModel($id); 
         $namafile          = $hapus['logo']; 
     
-        unlink(Yii::getAlias('@web').'/uploads/'. $namafile);
+        unlink(Yii::getAlias('@app').'/web/uploads/'. $namafile);
 
         $this->findModel($id)->delete();
 

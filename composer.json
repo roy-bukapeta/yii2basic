@@ -20,7 +20,7 @@
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-widgets": "*",
         "dektrium/yii2-user": "0.9.*@dev",
-        "mdmsoft/yii2-upload-file": "~1.2"
+        "2amigos/yii2-leaflet-extension": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

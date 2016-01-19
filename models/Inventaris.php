@@ -38,7 +38,7 @@ class Inventaris extends \yii\db\ActiveRecord
             [['id'], 'required'],
             [['id'], 'integer'],
             [['file'], 'file'],
-            [['nama_barang', 'kode_barang','jenis_barang', 'tahun_pembelian'], 'required'],
+            [['nama_barang', 'kode_barang','file','jenis_barang', 'tahun_pembelian'], 'required'],
             [['logo'], 'string','max' => 100]
         ];
     }
