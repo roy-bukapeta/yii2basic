@@ -14,7 +14,7 @@ namespace app\widget;
 use yii\web\AssetBundle;
 
 
-class LeafletAssets extends AssetBundle
+class LeafletAssetsView extends AssetBundle
 {
 
     public $sourcePath = '@app/widget/assets/js/Leaflet/';

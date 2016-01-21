@@ -42,8 +42,39 @@
         drawnItems = L.featureGroup().addTo(map);
 
             map.addControl(new L.Control.Draw({
+                draw : {
+                    polygon : true  ,
+                    polyline : true,
+                    rectangle : true,
+                    circle : false
+
+                },
                 edit: { featureGroup: drawnItems }
                     }));
+
+        function toWKT3(layer) {
+            var lng, lat, coords = [];
+            if (layer instanceof L.Polygon || layer instanceof L.Polyline) {
+                var latlngs = layer.getLatLngs();
+                for (var i = 0; i < latlngs.length; i++) {
+                latlngs[i]
+                coords.push(latlngs[i].lng + " " + latlngs[i].lat);
+                  if (i === 0) {
+                    lng = latlngs[i].lng;
+                    lat = latlngs[i].lat;
+                  }
+          };
+                if (layer instanceof L.Polygon) {
+                    return "POLYGON((" + coords.join(",") + "," + lng + " " + lat + "))";
+                } else if (layer instanceof L.Polyline) {
+                    return "LINESTRING(" + coords.join(",") + ")";
+                }
+            } else if (layer instanceof L.Marker) {
+                return "POINT(" + layer.getLatLng().lng + " " + layer.getLatLng().lat + ")";
+            }
+        }
+
+
 
             
        map.on('draw:created', function (e) {
@@ -78,7 +109,7 @@
                 var textGeojson = JSON.stringify(layer.toGeoJSON());
                 console.log(textGeojson);
 
-                document.getElementById('users-geojson').value = textGeojson;
+                document.getElementById('users-geojson').value = toWKT3(e.layer);
                 document.getElementById('users-type_geometry').value = type;
 
             //console.log(layer);

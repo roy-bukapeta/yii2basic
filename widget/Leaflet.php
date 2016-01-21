@@ -46,6 +46,7 @@ class Leaflet extends InputWidget
     }
     
     public function init() {
+        
         $this->registerAssets();
     }
     
@@ -57,7 +58,7 @@ class Leaflet extends InputWidget
 
         if ($this->randomkey) {
             
-            LeafletAssets::register($view);
+            LeafletAssetsRandom::register($view);
             
             $random = $this->randomkey;
             
@@ -98,7 +99,7 @@ class Leaflet extends InputWidget
 
                 
             ';
-            $view->registerJs($scriptJS, \yii\web\View::POS_END);
+            $view->registerJs($scriptJS);
             $view->registerJsFile('https://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js', ['depends' => [LeafletAssetsRandom::className() ]]);
         } 
         else {
@@ -106,14 +107,6 @@ class Leaflet extends InputWidget
             $view->registerJsFile('https://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js', ['depends' => [LeafletAssets::className() ]]);
         }
     }
-    
-    public function generateRandomString($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString.= $characters[rand(0, $charactersLength - 1) ];
-        }
-        return $randomString;
-    }
+
+ 
 }

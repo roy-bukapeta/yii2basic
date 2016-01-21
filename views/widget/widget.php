@@ -1,14 +1,9 @@
 <?php
-use app\widget\Test;
+use app\widget\Style;
 /* @var $this yii\web\View */
 
 $this->title = 'How To Make Widget';
 ?>
 
 
-<b><?= 	Test::widget(['image' => '']) ?></b>
-<br>
-<br>
-<br>
-<br>
-<b><?= 	Test::widget(['image' => ' ABC']) ?></b>
+<b><?= Style::widget(['image' => '2']) ?></b>

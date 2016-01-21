@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="col-lg-6">
-            <?= app\widget\Leaflet::widget(['options' => 'view']);?>
+            <?= app\widget\Leaflet::widget();?>
     </div>
 
     <?php 

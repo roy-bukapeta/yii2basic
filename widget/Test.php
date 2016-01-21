@@ -1,8 +1,11 @@
 <?php
 namespace app\widget;
 
+
+use yii;
 use yii\base\Widget;
 use yii\helpers\Html;
+use yii\helper\Url;
 
 
 class Test extends Widget
@@ -11,19 +14,25 @@ class Test extends Widget
 
     public $image;
 
+
     public function init()
     {
 
-        if ($this->image) {
-
-            $this->image = 'ada';
-        }else{
-            $this->image = 'kosong';
-        }
+        
     }
 
     public function run()
     {
-        return Html::encode($this->image);
+        if ($this->image == 1) {
+
+           $a = 'ada';
+
+           return $a;
+
+        }else{
+            $b = 'kosong';
+
+           return $b;
+        }
     }
 }
